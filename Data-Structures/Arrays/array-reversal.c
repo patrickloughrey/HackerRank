@@ -13,7 +13,6 @@
 #include <assert.h>
 #include <limits.h>
 #include <stdbool.h>
-#define MAX 50
 
 int main() {
 
@@ -21,8 +20,10 @@ int main() {
   int *ptr;
 
   /* Scan standard input for size of array */
-  ptr = &arr[0];
   scanf("%d", size);
+
+  int *arr = (int *)malloc(sizeof(int) * size + 1);
+  ptr = &arr[0];
 
   for(i = 0; i < size; i++) {
       scanf("%d", ptr);
