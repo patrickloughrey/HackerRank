@@ -13,35 +13,29 @@
 #include <assert.h>
 #include <limits.h>
 #include <stdbool.h>
+#define MAX 50
 
 int main() {
 
-  int i, temp;
-  int num = 0;
-  scanf("%d\n", &num);
+  int i, size, arr[MAX];
+  int *ptr;
 
-  /* Dynamically allocate space for array of unknown length at compile time */
-  int *arr = (int *)malloc(sizeof(int) * num);
+  /* Scan standard input for size of array */
+  ptr = &arr[0];
+  scanf("%d", size);
 
-  /* Read in the elements of the array */
-  for(i = 0; i < num; i++) {
-      scanf("%d ", &arr[i]);
+  for(i = 0; i < size; i++) {
+      scanf("%d", ptr);
+      ptr++;
   }
 
-  length i - 1;
-  i = 0;
+  /* Set pointer to address of last array element */
+  ptr = &arr[size - 1];
 
-  /* Swap values of array */
-  while(i < length) {
-      temp = arr[i];
-      arr[i] = arr[length];
-      arr[length] = temp;
-      i++;
-      length--;
-  }
-
-  for(i = 0; i < num; i++) {
-      printf("%d ", arr[i]);
+  for(i = size - 1; i >= 0; i--) {
+      printf("%d", *ptr);
+      printf(" ");
+      ptr--;
   }
 
   return 0;
