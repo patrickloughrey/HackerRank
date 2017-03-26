@@ -1,7 +1,7 @@
 /*
 *
 * This is the first HackerRank data structures problem:
-* Reverse the integers in an array of size N 
+* Reverse the integers in an array of size N with spaces in between each integer 
 *
 *
 */
@@ -16,12 +16,13 @@
 
 int main() {
 
-  int i, size, arr[MAX];
+  int i, size;
   int *ptr;
 
   /* Scan standard input for size of array */
   scanf("%d", size);
 
+  /* Dynamically allocate memory from heap of specific size */
   int *arr = (int *)malloc(sizeof(int) * size + 1);
   ptr = &arr[0];
 
